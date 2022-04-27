@@ -99,8 +99,12 @@ def factor_reclassify(factor):
                             [min_factor + 4 * interval, max_factor, 5]])
 
     elif factor == "twi":
-        remap = RemapValue([[min_factor, 8, 0], [8, 12, 1],
-                            [12, max_factor, 2]])
+        if min_factor >= 8: 
+            remap = RemapValue([[min_factor, 12, 0],
+                                [12, max_factor, 1]])
+	    elif min_factor < 8:
+            remap = RemapValue([[min_factor, 8, 0], [8, 12, 1],
+                                [12, max_factor, 2]])
 
     elif factor == "slope":
         try:
