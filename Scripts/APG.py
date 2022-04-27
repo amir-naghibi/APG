@@ -102,7 +102,7 @@ def factor_reclassify(factor):
         if min_factor >= 8: 
             remap = RemapValue([[min_factor, 12, 0],
                                 [12, max_factor, 1]])
-	    elif min_factor < 8:
+	elif min_factor < 8:
             remap = RemapValue([[min_factor, 8, 0], [8, 12, 1],
                                 [12, max_factor, 2]])
 
